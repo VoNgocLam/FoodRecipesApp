@@ -78,22 +78,32 @@ namespace FoodRecipesApp
                 this.PrevButton.Visibility = Visibility.Visible;
             };
 
-
-            pageno.CurrentPage = 1;
-            pageno.RowsPerPage = 10;
-            pageno.Count = _data.Count;
-            pageno.TotalPage = (pageno.Count / pageno.RowsPerPage) +
-               (pageno.Count % pageno.RowsPerPage == 0 ? 0 : 1);
-
-            Thread thread = new Thread(delegate ()
+            if (_data.Count == 0)
             {
-                Dispatcher.Invoke(() =>
-                {
-                    dataListview.ItemsSource = _data.Take(pageno.RowsPerPage);
-                });
-            });
+                this.MessageText.Visibility = Visibility.Visible;
+                MessageText.Text = "Nothing Found";
+                dataListview.ItemsSource = _data.Take(0);
 
-            thread.Start();
+            }
+            else
+            {
+                pageno.CurrentPage = 1;
+                pageno.RowsPerPage = 10;
+                pageno.Count = _data.Count;
+                pageno.TotalPage = (pageno.Count / pageno.RowsPerPage) +
+                   (pageno.Count % pageno.RowsPerPage == 0 ? 0 : 1);
+
+                Thread thread = new Thread(delegate ()
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        dataListview.ItemsSource = _data.Take(pageno.RowsPerPage);
+                    });
+                });
+
+                thread.Start();
+            }
+          
 
         }
 

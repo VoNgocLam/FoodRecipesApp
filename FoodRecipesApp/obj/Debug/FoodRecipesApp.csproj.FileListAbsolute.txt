@@ -30,3 +30,5 @@ C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThe
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\App.baml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FoodRecipesApp.csproj.CopyComplete
+C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\RecipeDetailControl.g.cs
+C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\RecipeDetailControl.baml

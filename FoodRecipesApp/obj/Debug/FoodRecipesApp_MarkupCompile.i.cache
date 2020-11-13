@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\App.xaml
-61593895690
+7-1036002202
 
-131145106625
+14170070726
 15-610434082
-AboutUsControl.xaml;FavouriteRecipesControl.xaml;HomeControl.xaml;MainWindow.xaml;NewRecipe.xaml;SplashScreen.xaml;
+AboutUsControl.xaml;FavouriteRecipesControl.xaml;HomeControl.xaml;MainWindow.xaml;NewRecipe.xaml;RecipeDetailControl.xaml;SplashScreen.xaml;
 
-True
+False
 

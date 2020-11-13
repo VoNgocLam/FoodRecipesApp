@@ -20,6 +20,7 @@ using System.ComponentModel;
 using System.Windows.Media.Animation;
 using System.Runtime.CompilerServices;
 using System.Reflection;
+using System.Security.Policy;
 
 namespace FoodRecipesApp
 {
@@ -28,10 +29,12 @@ namespace FoodRecipesApp
     /// </summary>
     public partial class HomeControl : UserControl
     {
-        public HomeControl()
+        private double _width;
+        public HomeControl(double Width)
         {
             InitializeComponent();
             DataContext = this;
+            _width = Width;
         }
         
         public Recipes FavoriteRecipes { get; set; } = null;
@@ -83,7 +86,14 @@ namespace FoodRecipesApp
 
                  
             pageno.CurrentPage = 1;
-            pageno.RowsPerPage = 10;
+            if(_width==60)
+            {
+                pageno.RowsPerPage = 10;
+            }
+            else
+            {
+                pageno.RowsPerPage = 8;
+            }
             pageno.Count = _data.Count;
             pageno.TotalPage = (pageno.Count / pageno.RowsPerPage) +
                (pageno.Count % pageno.RowsPerPage == 0 ? 0 : 1);
@@ -182,5 +192,13 @@ namespace FoodRecipesApp
                 MessageText.Text = "Nothing Found";
             }    
         }
+
+        private void dataListview_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+           
+       //Do Nothing
+        }
+
+       
     }
 }

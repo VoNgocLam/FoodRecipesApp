@@ -31,6 +31,7 @@
             </Button>
         </StackPanel>
         <Grid Name="FoodRecipes">
+            <TextBlock Name="MessageText" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" FontWeight="DemiBold" Foreground="#FF747070"/>
             <ListView Name="dataListview" Background="#ffff" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>

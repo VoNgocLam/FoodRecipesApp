@@ -32,7 +32,7 @@ namespace FoodRecipesApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Recipes.Children.Clear();
-            Recipes.Children.Add(new HomeControl());
+            Recipes.Children.Add(new HomeControl(TagMenu.Width));
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
@@ -58,7 +58,7 @@ namespace FoodRecipesApp
             {
                 case 1:
                     Recipes.Children.Clear();
-                    Recipes.Children.Add(new HomeControl());
+                    Recipes.Children.Add(new HomeControl(TagMenu.Width));
                     break;
                 case 2:
                     Recipes.Children.Clear();

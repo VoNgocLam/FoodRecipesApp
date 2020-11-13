@@ -76,6 +76,9 @@
       <DependentUpon>NewRecipe.xaml</DependentUpon>
     </Compile>
     <Compile Include="PagingInfo.cs" />
+    <Compile Include="RecipeDetailControl.xaml.cs">
+      <DependentUpon>RecipeDetailControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Recipes.cs" />
     <Compile Include="SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
@@ -105,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecipeDetailControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\favorite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

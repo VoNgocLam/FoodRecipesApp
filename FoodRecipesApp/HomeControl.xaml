@@ -15,13 +15,17 @@
              FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="729" d:DesignWidth="1332" Loaded="UserControl_Loaded">
     <DockPanel x:Name="Home" LastChildFill="True">
+        <Frame x:Name="_mainHome" NavigationUIVisibility="Hidden"></Frame>
         <Grid Name="TopGrid" DockPanel.Dock="Top" Height="60" VerticalAlignment="Top">
             <WrapPanel Name="TopPanel" HorizontalAlignment="Left">
                 <Image Source="Assets/recipes.png" Name="TopImage" Height="40" Width="40" Margin="10,0,5,0" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left"/>
                 <Label Name="TopLabel" Content="Recipes" Height="60" FontSize="24" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="#FF484848"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center">
-                <TextBox x:Name="SearchTextBox" KeyUp="SearchTextBox_KeyDown" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" materialDesign:HintAssist.Hint="Search Recipes" Margin="0,10,10,0"  BorderThickness="2" Padding="3,0,0,0" Width="300" Height="50" VerticalAlignment="Center" CaretBrush="#FF484848" BorderBrush="#FF484848" VerticalContentAlignment="Center" FontSize="16" SelectionBrush="#FF215BFF" />
+                <Grid Height="60" Margin="0,5,0,0">
+                    <TextBox x:Name="SearchTextBox" KeyUp="SearchTextBox_KeyDown" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" materialDesign:HintAssist.Hint=" Search Recipes" Margin="10,0,10,0" BorderThickness="2" Padding="3,0,0,0" Width="300" Height="40" VerticalAlignment="Center" CaretBrush="#FF484848" BorderBrush="#FF484848" VerticalContentAlignment="Center" FontSize="16" SelectionBrush="#FF215BFF" />
+                    <Image Source="Assets/search.png" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right" Margin="5,15,15,15"/>
+                </Grid>
             </WrapPanel>
         </Grid>
         
@@ -35,7 +39,7 @@
         </StackPanel>
         <Grid Name="FoodRecipes">
             <TextBlock Name="MessageText" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" FontWeight="DemiBold" Foreground="#FF747070"/>
-            <ListView Name="dataListview" Background="#ffff" ScrollViewer.VerticalScrollBarVisibility="Auto"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+            <ListView Name="dataListview" Background="#ffff" MouseLeftButtonUp="dataListview_MouseLeftButtonUp"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel/>
