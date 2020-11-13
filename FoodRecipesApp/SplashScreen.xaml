@@ -1,0 +1,70 @@
+﻿<Window x:Class="FoodRecipesApp.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodRecipesApp"
+        mc:Ignorable="d"
+        Title="SplashScreen" Loaded="Window_Loaded"  Height="450" Width="800" RenderOptions.BitmapScalingMode="HighQuality" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                <GradientStop Color="#FFC600" Offset="1.5"/>
+                <GradientStop Color="#ff5200" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+       
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="420"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel Margin="40">
+                    <TextBlock TextWrapping="Wrap" Name="Title" Text="{Binding}" TextAlignment="Center" FontSize="40" Margin="0,0,0,10" FontWeight="ExtraBold" FontFamily="Berlin Sans FB">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#73e000" Offset="0"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <Border Background="GhostWhite" BorderBrush="GhostWhite" BorderThickness="2" CornerRadius="1,3,1,5"/>
+                    <TextBlock TextWrapping="Wrap" Name="Description" Text="{Binding}" Margin="20" FontSize="15" FontFamily="Roboto" TextAlignment="Justify" Foreground="Wheat" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <CheckBox Name="Check" Checked="Check_Checked" Unchecked="Check_Unchecked" Content="Tắt hội thoại mỗi khi khởi động"  FontSize="16" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin ="20,0,30,0" Foreground="White" BorderBrush="White" Background="DarkOrange" FontFamily="Roboto" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="420"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Border Width="350" Height="350" CornerRadius="370"  Panel.ZIndex="2" VerticalAlignment="Center">
+                    <Border.Background>
+                        <ImageBrush x:Name="BackgoundImg" ImageSource="{Binding}" RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill"></ImageBrush>
+                    </Border.Background>
+                </Border>
+                   
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel>
+                      <TextBlock MouseDown="TextBlock_MouseDown"  Text="Bỏ qua >>  " TextAlignment="Right" FontSize="16" Margin="0,0,5,0" FontWeight="Bold" FontFamily="Roboto" Foreground="White" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+       
+        
+    </Grid>
+    
+
+</Window>

@@ -1,0 +1,66 @@
+﻿<Window x:Class="FoodRecipesApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodRecipesApp"
+        mc:Ignorable="d"
+        Title="Food Recipes" Height="800" Width="1400" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="HighQuality" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    
+    <DockPanel Name="Main" LastChildFill="True">
+        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Name="TopBar" Height="40" DockPanel.Dock="Top" Background="#ffd634">
+            <Label Content="Food Recipes" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#FF89754C"  />
+        </StackPanel>
+        
+        <Grid Name="TagMenu" Width="60" Background="#FFF3EEDB" HorizontalAlignment="Left" >
+            <ListView Height="600" x:Name="TagItem" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" MouseLeftButtonUp="TagItem_MouseLeftButtonUp">
+                
+                <ListViewItem Height="60" MouseUp="ListViewItem_MouseUp">
+                    <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="Assets/menu.png" Width="40" Height="40" />
+                    </Border>
+                </ListViewItem>
+                
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="Assets/home.png" Width="35" Height="35"></Image>
+                        </Border>
+                        <TextBlock Text="Recipes" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
+                    </StackPanel>
+                </ListViewItem>
+
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="Assets/favourite.png" Width="35" Height="35"></Image>
+                        </Border>
+                        <TextBlock Text="Favorite Recipe" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
+                    </StackPanel>
+                </ListViewItem>
+                
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="Assets/edit.png" Width="40" Height="40"/>
+                        </Border>
+                        <TextBlock Text="New Recipe" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
+                    </StackPanel>
+                </ListViewItem>
+                
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="Assets/motion.png" Width="40" Height="40"/>
+                        </Border>
+                        <TextBlock Text="About Us" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
+                    </StackPanel>
+                </ListViewItem>                               
+            </ListView>
+        </Grid>
+
+        <Grid x:Name="Recipes" >
+        </Grid>
+    </DockPanel>
+</Window>
