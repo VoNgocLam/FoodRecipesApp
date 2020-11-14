@@ -28,7 +28,9 @@ namespace FoodRecipesApp
     {
         private Recipes _data;
         private double _width;
-
+        BindingList<Steps> _listdetails;
+        int i = 0, j = 1;
+        string nameStep = "Bước ";
         public RecipeDetailControl(Recipes r,double w)
         {
             InitializeComponent();
@@ -39,6 +41,50 @@ namespace FoodRecipesApp
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             this.DataContext = _data;
+            _listdetails = new BindingList<Steps>();
+            PreviewPhoto.ItemsSource=_listdetails;
+            stepsListView.ItemsSource = _listdetails;
+            string folder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            folder = folder + $"\\List\\{_data.Title}\\";
+            string sFile = folder + "Detail.txt";
+            var dataFile = File.ReadAllLines(sFile);
+            while (i < dataFile.Length)
+            {
+                var step = new Steps()
+                {
+                    StepName = "",
+                    StepDescription = "",
+                    StepImages = new BindingList<string>(),
+                    Materials = new BindingList<string>()
+                };
+
+                if(nameStep + j.ToString() == dataFile[i])
+                {
+                    step.StepName = dataFile[i];
+                    step.StepDescription = dataFile[i + 1];
+                    i += 2;
+                    for(int k = i, temp = j + 1; ; k++)
+                    {
+                        if (k >= dataFile.Length)
+                        {
+                            i = k - 1;
+                            j++;
+                            break;
+                        }
+
+                        if (nameStep + temp.ToString() == dataFile[k] && k < dataFile.Length)
+                        {
+                            i = k - 1;
+                            j++;
+                            break;
+                        }
+                        step.StepImages.Add(folder + dataFile[k]);
+                    }
+                    _listdetails.Add(step);
+                }
+                i++;
+            }
+            stepContentListView.ItemsSource = _listdetails.Take(1);
         }
 
         private void Play_Click(object sender, RoutedEventArgs e)
@@ -52,6 +98,11 @@ namespace FoodRecipesApp
             this.webBrowser.Visibility = Visibility.Visible;
             this.webBrowser.NavigateToString(string.Format(html, _data.Youtube.Split('=')[1]));
             // Do nothing;
+        }
+
+        private void stepsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
