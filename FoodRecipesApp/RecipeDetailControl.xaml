@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FoodRecipesApp"
+             xmlns:controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -13,8 +14,112 @@
              TextOptions.TextRenderingMode="Auto"
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
-             d:DesignHeight="800" d:DesignWidth="400">
-    <Grid Background="red">
+             d:DesignHeight="729" d:DesignWidth="1332" Loaded="UserControl_Loaded">
+    <DockPanel Name="RecipeDetail" LastChildFill="True">
+        <WrapPanel DockPanel.Dock="Top" Height="60" VerticalAlignment="Top">
+            <Image Source="Assets/detail.png" Name="TopImage" Height="40" Width="40" Margin="10,0,5,0" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left"/>
+            <Label Name="TopLabel" Content="Detail" Height="60" FontSize="24" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="#FF484848"/>
+        </WrapPanel>
+        <Grid Width="500" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="69"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Button Name="Play" Height="100" Width="100" Click="Play_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"  Panel.ZIndex="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="Assets/play.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button>
+                <Border Name="BorderYoutube" Margin="10" Grid.Row="0" VerticalAlignment="Stretch" CornerRadius="12" Panel.ZIndex="1">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Picture}" RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill"></ImageBrush>
+                    </Border.Background>
+                </Border>
+                <controls:WebView Margin="10" x:Name="webBrowser" Height="300" Width="500" Panel.ZIndex="0"  Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
             
-    </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock Name="Title" Width="380" Height="Auto" Text="{Binding Title}" TextAlignment="Left" FontSize="26" VerticalAlignment="Center" Foreground="{Binding ColorTopBar}" Margin="0,10,0,10" FontWeight="Bold"/>
+               
+            </Grid>
+            
+            <Grid Grid.Row="2">
+                <Border x:Name="carouselCoverBorder" VerticalAlignment="Top" Height="300">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                            <GradientStop Color="#D3D3D3"
+                                          Offset="0"/>
+                            <GradientStop Color="Transparent"
+                                          Offset="0.1"/>
+                            <GradientStop Color="Transparent"
+                                          Offset="0.9"/>
+                            <GradientStop Color="#D3D3D3"
+                                          Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Button x:Name="previousStepButton" Style="{StaticResource MaterialDesignFloatingActionButton}" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="NavigateBefore" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" />
+                        </Button>
+                        <Button x:Name="nextStepButton" Style="{StaticResource MaterialDesignFloatingActionButton}" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Kind="NavigateNext" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" />
+                        </Button>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        
+        <Grid Name="Steps" Height="669">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="589"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions >
+            <Grid Grid.Row="0">
+                <TextBlock x:Name="stepContentText" Text="{Binding content}" TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" LineHeight="19" VerticalAlignment="Top" TextAlignment="Justify" Padding="10" Foreground="#696969" FontSize="15" FontWeight="Medium"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <ListView x:Name="stepsListView"
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                          Background="#4d4d4d"
+                          BorderThickness="0"
+                          SelectedIndex="0">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--Khung item-->
+                                <Border x:Name="itemBorder"
+                                    Width="45"
+                                    Margin="5">
+                                    <!--Tên bước-->
+                                    <TextBlock x:Name="stepName"
+                                           Text="{Binding Step}"
+                                           TextWrapping="WrapWithOverflow"
+                                           VerticalAlignment="Center"
+                                           TextAlignment="Center"
+                                           Foreground="#FFF"
+                                           FontSize="16"
+                                           FontWeight="Medium"/>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Button  Style="{StaticResource MaterialDesignFloatingActionButton}" Click="Button_Click" Background="{x:Null}" Foreground="{x:Null}" Margin="0,0,12,12" Height="40" Width="40">
+                        <materialDesign:PackIcon Kind="PresenceExit" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" />
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </DockPanel>
 </UserControl>

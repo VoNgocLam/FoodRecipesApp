@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\vongo\\Desktop\\FoodRecipesApp\\FoodRecipesApp\\FoodRecipesApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vongo\\Desktop\\FoodRecipesApp\\FoodRecipesApp\\FoodRecipesApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vongo\\Desktop\\FoodRecipesApp\\FoodRecipesApp\\FoodRecipesApp.csproj",
+        "projectName": "FoodRecipesApp",
+        "projectPath": "C:\\Users\\vongo\\Desktop\\FoodRecipesApp\\FoodRecipesApp\\FoodRecipesApp.csproj",
+        "packagesPath": "C:\\Users\\vongo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vongo\\Desktop\\FoodRecipesApp\\FoodRecipesApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\vongo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[1.2.7, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Microsoft.Toolkit.Wpf.UI.Controls.WebView": {
+              "target": "Package",
+              "version": "[6.1.2, )"
+            },
+            "Microsoft.Windows.SDK.Contracts": {
+              "target": "Package",
+              "version": "[10.0.18362.2005, )"
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "System.Runtime.WindowsRuntime": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Runtime.WindowsRuntime.UI.Xaml": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "imports": [
+            "uap10.0.18362"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

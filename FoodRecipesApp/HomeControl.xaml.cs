@@ -194,8 +194,11 @@ namespace FoodRecipesApp
         }
 
         private void dataListview_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-           
+        { 
+
+            var recipe = (sender as ListView).SelectedItem as Recipes;
+            Home.Children.Clear();
+            Home.Children.Add(new RecipeDetailControl(recipe,_width));
        //Do Nothing
         }
 

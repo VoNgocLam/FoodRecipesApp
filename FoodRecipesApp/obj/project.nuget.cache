@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "H/NlKGC3kYmYfsL2OOEEeWnaZZgGZQkGNegI5wMz0E0mfyu87ZZUKDEHiuTLDaQ3xOSZEFPhLiRQS1lem6EZeA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vongo\\Desktop\\FoodRecipesApp\\FoodRecipesApp\\FoodRecipesApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vongo\\.nuget\\packages\\fody\\6.3.0\\fody.6.3.0.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\materialdesigncolors\\1.2.7\\materialdesigncolors.1.2.7.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\materialdesignthemes\\3.2.0\\materialdesignthemes.3.2.0.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\microsoft.toolkit.wpf.ui.controls.webview\\6.1.2\\microsoft.toolkit.wpf.ui.controls.webview.6.1.2.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.18362.2005\\microsoft.windows.sdk.contracts.10.0.18362.2005.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\propertychanged.fody\\3.3.1\\propertychanged.fody.3.3.1.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\system.runtime.windowsruntime\\4.6.0\\system.runtime.windowsruntime.4.6.0.nupkg.sha512",
+    "C:\\Users\\vongo\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

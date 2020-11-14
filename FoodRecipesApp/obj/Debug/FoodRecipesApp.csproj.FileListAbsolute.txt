@@ -27,8 +27,10 @@ C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignCol
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignColors.pdb
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\App.baml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FoodRecipesApp.csproj.CopyComplete
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\RecipeDetailControl.g.cs
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\RecipeDetailControl.baml
+C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FoodRecipesApp.csproj.Fody.CopyLocal.cache
+C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
+C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb
