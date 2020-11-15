@@ -102,7 +102,8 @@ namespace FoodRecipesApp
 
         private void stepsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var index = stepsListView.SelectedIndex;
+            stepContentListView.ItemsSource= _listdetails.Skip(index).Take(1);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

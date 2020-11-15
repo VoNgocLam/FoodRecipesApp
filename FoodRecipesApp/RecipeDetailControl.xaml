@@ -92,21 +92,27 @@
                 <Border>
                     <ListView x:Name="stepContentListView"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                          BorderThickness="0"
-                          SelectedIndex="0">
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              Focusable="False"
+                          BorderThickness="0">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
+                                <Grid/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <!--Khung item-->
-                                <Border x:Name="itemBorder"
-                                    Margin="5">
-                                    <!--Tên bước-->
+                                <StackPanel>
+                                    <StackPanel Height="80" Width="60">
+                                        <TextBlock Padding="0 10 0 0" Text="{Binding StepName}" Foreground="#000" FontSize="20" Margin="0,0,0,0"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </StackPanel>
                                     <TextBlock x:Name="stepContentText" Text="{Binding StepDescription}" TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" LineHeight="19" VerticalAlignment="Top" TextAlignment="Justify" Padding="10" Foreground="#696969" FontSize="15" FontWeight="Medium"/>
-                                </Border>
+                                    <Border CornerRadius="20" Width="100" Height="100" Margin="10,10,0,0">
+                                        <Border.Background>
+                                            <ImageBrush  Stretch="UniformToFill" ImageSource="{Binding StepImages}" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                        </Border.Background>
+                                    </Border>
+                                </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
