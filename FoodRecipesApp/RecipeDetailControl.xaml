@@ -24,7 +24,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="220"/>
+                <RowDefinition Height="300"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Button Name="Play" Height="100" Width="100" Click="Play_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"  Panel.ZIndex="2" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -39,12 +39,12 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <TextBlock Name="Title" Width="380" Height="Auto" Text="{Binding Title}" TextAlignment="Left" FontSize="26" VerticalAlignment="Center" Margin="0,10,0,10" FontWeight="Bold"/>
+                <TextBlock Name="Title" Width="380" Height="Auto" Text="{Binding Title}" TextAlignment="Left" FontSize="34" VerticalAlignment="Center" Margin="0,10,0,10" FontWeight="Bold" Foreground="OrangeRed"/>
 
             </Grid>
 
             <Grid Grid.Row="2">
-                <ItemsControl Name="PreviewPhoto" Width="400" Height="200">
+                <ItemsControl Name="PreviewPhoto" Width="400" Height="280">
                     <ItemsControl.Template>
                         <ControlTemplate TargetType="ItemsControl">
                             <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
@@ -68,7 +68,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <WrapPanel>
-                                            <Border CornerRadius="8" Width="200" Height="200" Margin="5,0,0,0">
+                                            <Border CornerRadius="8" Width="280" Height="280" Margin="5,0,0,0">
                                                 <Border.Background>
                                                     <ImageBrush Stretch="UniformToFill" ImageSource="{Binding}" RenderOptions.BitmapScalingMode="HighQuality"/>
                                                 </Border.Background>
@@ -90,32 +90,62 @@
             </Grid.RowDefinitions >
             <Grid Grid.Row="0">
                 <Border>
-                    <ListView x:Name="stepContentListView"
-                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                    <ItemsControl x:Name="stepContentListView"
+                          ScrollViewer.VerticalScrollBarVisibility="Hidden"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               Focusable="False"
-                          BorderThickness="0">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <Grid/>
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        <ListView.ItemTemplate>
+                          BorderThickness="0" Margin="0,2,0,-2">
+                        <ItemsControl.Template>
+                            <ControlTemplate TargetType="ItemsControl">
+                                <ScrollViewer>
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <StackPanel Height="80" Width="60">
-                                        <TextBlock Padding="0 10 0 0" Text="{Binding StepName}" Foreground="#000" FontSize="20" Margin="0,0,0,0"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <StackPanel>
+                                        <Border Height="40" Width="150" CornerRadius="10 10 10 10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Border.Background>
+                                                <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,1">
+                                                    <GradientStop Color="#FFA500"
+                                              Offset="0"/>
+                                                    <GradientStop Color="#FF4500"
+                                              Offset="0.5"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding StepName}" Foreground="#FFF" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </Border>
+                                        <TextBlock x:Name="stepContentText" Text="{Binding StepDescription}" TextWrapping="Wrap"  VerticalAlignment="Top" TextAlignment="Justify" Margin="10" Padding="10" Foreground="#696969" FontSize="25" FontWeight="Medium"/>
                                     </StackPanel>
-                                    <TextBlock x:Name="stepContentText" Text="{Binding StepDescription}" TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" LineHeight="19" VerticalAlignment="Top" TextAlignment="Justify" Padding="10" Foreground="#696969" FontSize="15" FontWeight="Medium"/>
-                                    <Border CornerRadius="20" Width="100" Height="100" Margin="10,10,0,0">
-                                        <Border.Background>
-                                            <ImageBrush  Stretch="UniformToFill" ImageSource="{Binding StepImages}" RenderOptions.BitmapScalingMode="HighQuality"/>
-                                        </Border.Background>
-                                    </Border>
-                                </StackPanel>
+
+                                    <ItemsControl Margin="0 0 0 20" ItemsSource="{Binding StepImages}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                                    <Border CornerRadius="20" Width="300" Height="300" Margin="10,10,0,0" BorderThickness="1" BorderBrush="OrangeRed" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                        <Border.Background>
+                                                            <ImageBrush  Stretch="UniformToFill" ImageSource="{Binding}" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                        </Border.Background>
+                                                    </Border>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>                                
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </Border>
             </Grid>
             <Grid Grid.Row="1">
@@ -159,8 +189,8 @@
                 </Grid>
 
                 <Grid Grid.Column="1">
-                    <Button  Style="{StaticResource MaterialDesignFloatingActionButton}" Click="Button_Click" Background="{x:Null}" Foreground="{x:Null}" Margin="0,0,12,12" Height="40" Width="40">
-                        <materialDesign:PackIcon Kind="PresenceExit" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" />
+                    <Button  Style="{StaticResource MaterialDesignFloatingActionButton}" Click="Button_Click" Background="#d3414f" Foreground="{x:Null}" Margin="0,0,12,12" Height="40" Width="40">
+                        <materialDesign:PackIcon Kind="PresenceExit" Width="30" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" />
                     </Button>
                 </Grid>
             </Grid>

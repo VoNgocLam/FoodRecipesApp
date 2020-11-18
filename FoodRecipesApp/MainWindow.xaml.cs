@@ -28,11 +28,24 @@ namespace FoodRecipesApp
         {
             InitializeComponent();
         }
-
+        public HomeControl homeScreen;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Recipes.Children.Clear();
-            Recipes.Children.Add(new HomeControl(TagMenu.Width));
+            AboutUsControl aboutUsControl = new AboutUsControl();
+
+            if (Recipes.Children.Count==0)
+            {
+                homeScreen = new HomeControl(TagMenu.Width);
+                Recipes.Children.Clear();
+                Recipes.Children.Add(homeScreen);
+            }
+            if (Recipes.Children.Count==1 && homeScreen.Home.Children.Count==4)
+            {
+                homeScreen = new HomeControl(TagMenu.Width);
+                Recipes.Children.Clear();
+                Recipes.Children.Add(homeScreen);
+            }
+              
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)

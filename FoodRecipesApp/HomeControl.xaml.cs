@@ -192,16 +192,16 @@ namespace FoodRecipesApp
                 MessageText.Text = "Nothing Found";
             }    
         }
-
-        private void dataListview_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        { 
-
+             
+        private void dataListview_MouseUp(object sender, MouseEventArgs e)
+        {
+            
             var recipe = (sender as ListView).SelectedItem as Recipes;
-            Home.Children.Clear();
-            Home.Children.Add(new RecipeDetailControl(recipe,_width));
-       //Do Nothing
+            if (recipe != null)
+            {
+                Home.Children.Clear();
+                Home.Children.Add(new RecipeDetailControl(recipe, _width));
+            }           
         }
-
-       
     }
 }

@@ -38,7 +38,7 @@
             </Grid>
             <Grid Grid.Row="1">
                 <StackPanel>
-                    <CheckBox Name="Check" Checked="Check_Checked" Unchecked="Check_Unchecked" Content="Tắt hội thoại mỗi khi khởi động"  FontSize="16" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin ="20,0,30,0" Foreground="White" BorderBrush="White" Background="DarkOrange" FontFamily="Roboto" FontWeight="Bold"/>
+                    <CheckBox Name="Check" Checked="Check_Checked" Unchecked="Check_Unchecked" Content="Tắt hội thoại mỗi khi khởi động"  FontSize="16" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin ="20,0,30,0" Foreground="#983d00" BorderBrush="White" Background="DarkOrange" FontFamily="Roboto" FontWeight="Medium"/>
                 </StackPanel>
             </Grid>
         </Grid>

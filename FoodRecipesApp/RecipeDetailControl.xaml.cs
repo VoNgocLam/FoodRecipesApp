@@ -24,6 +24,7 @@ namespace FoodRecipesApp
     /// <summary>
     /// Interaction logic for RecipeDetailControl.xaml
     /// </summary>
+    ///
     public partial class RecipeDetailControl : UserControl
     {
         private Recipes _data;
