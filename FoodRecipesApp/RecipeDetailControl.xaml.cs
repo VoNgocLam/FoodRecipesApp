@@ -45,7 +45,7 @@ namespace FoodRecipesApp
             _listdetails = new BindingList<Steps>();
             PreviewPhoto.ItemsSource=_listdetails;
             stepsListView.ItemsSource = _listdetails;
-            string folder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string folder = AppDomain.CurrentDomain.BaseDirectory;
             folder = folder + $"\\List\\{_data.Title}\\";
             string sFile = folder + "Detail.txt";
             var dataFile = File.ReadAllLines(sFile);

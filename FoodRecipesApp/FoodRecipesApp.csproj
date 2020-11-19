@@ -39,6 +39,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -64,9 +67,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AboutUsControl.xaml.cs">
-      <DependentUpon>AboutUsControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FavouriteRecipesControl.xaml.cs">
       <DependentUpon>FavouriteRecipesControl.xaml</DependentUpon>
     </Compile>
@@ -85,10 +85,6 @@
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Steps.cs" />
-    <Page Include="AboutUsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="FavouriteRecipesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,6 +200,15 @@
     <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml">
       <Version>4.6.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\new_recipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

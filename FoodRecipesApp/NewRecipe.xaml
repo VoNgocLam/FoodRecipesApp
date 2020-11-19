@@ -5,8 +5,164 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodRecipesApp"
         mc:Ignorable="d"
-        Title="NewRecipe" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None"
+        Title="New Recipe" Height="800" Width="1400" UseLayoutRounding="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <DockPanel x:Name="NewRecipeWindow" LastChildFill="True">
+        <Grid Name="TopGrid" DockPanel.Dock="Top" Height="60" VerticalAlignment="Top">
+            <WrapPanel Name="TopPanel" HorizontalAlignment="Left">
+                <Image Source="Assets/new_recipe.png" Name="TopImage" Height="40" Width="40" Margin="10,0,5,0" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left"/>
+                <Label Name="TopLabel" Content="New Recipe" Height="60" FontSize="24" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="#FF484848"/>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Right">
+                <Button Click="SaveButton_Click" Name="SaveButton" Style="{StaticResource MaterialDesignFloatingActionButton}" Visibility="Visible" Height="35" Width="35"  BorderBrush="{x:Null}" Background="#68f582" Margin="0,10,15,0">
+                    <materialDesign:PackIcon Kind="ContentSave" Width="30" Height="30" Foreground="#5e747d" />
+                </Button>
+                <Button Name="ExitButton" Click="ExitButton_Click" Style="{StaticResource MaterialDesignFloatingActionButton}" Visibility="Visible" Height="35" Width="35"  BorderBrush="{x:Null}" Background="#ff3636" Margin="0,10,10,0">
+                    <materialDesign:PackIcon Kind="Cancel" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                </Button>
+            </WrapPanel>
+        </Grid>
+        <Canvas>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Canvas.Left="21" Canvas.Top="21" >
+                <TextBlock Text="Title" FontSize="21" FontWeight="DemiBold" VerticalAlignment="Center"/>
+                <TextBox
+                        x:Name="RecipeName"
+                        FontSize="18"
+                        Margin="90,0,0,0"
+                        Width="500"
+                        BorderThickness="0"
+                        materialDesign:HintAssist.Hint="Recipe Name"
+                        materialDesign:HintAssist.IsFloating="True"
+                        materialDesign:TextFieldAssist.HasOutlinedTextField="True"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Canvas.Left="21" Canvas.Top="101" >
+                <TextBlock Text="Description" FontSize="21" FontWeight="DemiBold" VerticalAlignment="Center"/>
+                <TextBox
+                        x:Name="RecipeDescription"
+                        FontSize="18"
+                        Margin="13,10,0,0"
+                        Width="620"
+                        Height="80"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        materialDesign:HintAssist.Hint="Recipe Description"
+                        materialDesign:HintAssist.IsFloating="True"
+                        materialDesign:TextFieldAssist.HasOutlinedTextField="True"
+                      />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Canvas.Left="21" Canvas.Top="255" >
+                <TextBlock Text="Video Link" FontSize="21" FontWeight="DemiBold" VerticalAlignment="Center"/>
+                <TextBox
+                        x:Name="VideoLink"
+                        FontSize="18"
+                        Margin="28,0,0,0"
+                        Width="500"
+                        BorderThickness="0"
+                        materialDesign:HintAssist.Hint="Youtube Link"
+                        materialDesign:HintAssist.IsFloating="True"
+                        materialDesign:TextFieldAssist.HasOutlinedTextField="True"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Canvas.Left="21" Canvas.Top="350">
+                <TextBlock Text="Image" FontSize="21" FontWeight="DemiBold" VerticalAlignment="Center"/>
+                <Border Name="Image"
+                        BorderThickness="3"
+                        BorderBrush="#FF484848"
+                        Height="300"
+                        Width="300"
+                        CornerRadius="30"
+                        VerticalAlignment="Center" Margin="60,10,10,10">
+                    <Border.Background>
+                        <ImageBrush x:Name="ImageDescriptionOfRecipe" RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill">
+
+                        </ImageBrush>
+                    </Border.Background>
+                    <Button x:Name="RecipeImageButton" Background="{Binding}" BorderBrush="{x:Null}" Click="RecipeImageButton_Click" Height="250" Width="250" Margin="0,0,0,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                        <materialDesign:PackIcon Kind="ImageAdd" Width="auto" Height="auto" Foreground="#5e747d" />
+                    </Button>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Canvas.Left="750" Canvas.Top="21">
+                <TextBlock Text="Step" FontSize="21" FontWeight="DemiBold" VerticalAlignment="Center"/>
+                <TextBox
+                        x:Name="StepName"
+                        FontSize="18"
+                        Margin="70,0,0,0"
+                        Width="350"
+                        BorderThickness="0"
+                        materialDesign:HintAssist.Hint="Step Description"
+                        materialDesign:HintAssist.IsFloating="True"
+                        materialDesign:TextFieldAssist.HasOutlinedTextField="True"/>
+                
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Canvas.Left="750" Canvas.Top="150">
+                <TextBlock Text="Step Image" FontSize="21" FontWeight="DemiBold" VerticalAlignment="Center"/>
+                <Button Name="imgStep" Margin="70,0,0,0" Click="imgStep_Click" Height="Auto" Background="#FF484848" BorderBrush="#FF484848" Opacity="0.8" VerticalContentAlignment="Center" Padding="16,4,16,8">
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Kind="FolderMultipleImage" RenderOptions.BitmapScalingMode="HighQuality" Width="50" Height="50" Name="imgssstep" Foreground="{Binding ColorTopBar}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="Images Step" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="addStep" Click="addStep_Click"  Height="Auto" Width="Auto" Background="#FF484848" BorderBrush="#FF484848" Opacity="0.8" Margin="50,0,0,0">
+                    <StackPanel>
+                        <materialDesign:PackIcon Kind="PlusCircleOutline" RenderOptions.BitmapScalingMode="HighQuality" Width="30" Height="30" Name="addstepppp" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Content="Add Step" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Foreground="#DDFFFFFF" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel  Canvas.Left="750" Canvas.Top="250">
+                <Border BorderThickness="3"
+                        BorderBrush="#FF484848"
+                        Height="400"
+                        Width="570"
+                        VerticalAlignment="Center" Margin="10,10,10,10">
+                    <ListView ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True" Name="dataListview" Margin="10,10,10,10">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding StepName}" Foreground="Red" FontSize="25" FontWeight="Bold"/>
+                                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding StepDescription}" Foreground="Black" FontSize="20"/>
+                                    <ListView Margin="0 0 0 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding StepImages}">
+                                        <ListView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel></WrapPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListView.ItemsPanel>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <Border CornerRadius="10,10,10,10" Width="95" Height="95" BorderThickness="1">
+                                                        <Border.Background>
+                                                            <ImageBrush ImageSource="{Binding}" RenderOptions.BitmapScalingMode="HighQuality" Stretch="UniformToFill"/>
+                                                        </Border.Background>
+                                                    </Border>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Border>
+            </StackPanel>
+        </Canvas>
+    </DockPanel>
 </Window>

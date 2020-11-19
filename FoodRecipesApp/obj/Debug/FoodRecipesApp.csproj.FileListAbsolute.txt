@@ -7,8 +7,6 @@ C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThe
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb
-C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FoodRecipesApp.csprojAssemblyReference.cache
-C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\AboutUsControl.g.cs
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FavouriteRecipesControl.g.cs
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\HomeControl.g.cs
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\MainWindow.g.cs
@@ -19,7 +17,6 @@ C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\App.g.cs
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FoodRecipesApp_MarkupCompile.cache
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FoodRecipesApp_MarkupCompile.lref
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\App.baml
-C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\AboutUsControl.baml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\FavouriteRecipesControl.baml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\HomeControl.baml
 C:\Users\vongo\Desktop\FoodRecipesApp\FoodRecipesApp\obj\Debug\MainWindow.baml

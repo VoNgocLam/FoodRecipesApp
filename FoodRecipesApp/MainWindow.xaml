@@ -39,7 +39,7 @@
                         <TextBlock Text="Favorite Recipe" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
                     </StackPanel>
                 </ListViewItem>
-                
+
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -48,15 +48,6 @@
                         <TextBlock Text="New Recipe" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
                     </StackPanel>
                 </ListViewItem>
-                
-                <ListViewItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderBrush="{x:Null}" Panel.ZIndex="1" Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="Assets/motion.png" Width="40" Height="40"/>
-                        </Border>
-                        <TextBlock Text="About Us" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFCD4242"/>
-                    </StackPanel>
-                </ListViewItem>                               
             </ListView>
         </Grid>
 
